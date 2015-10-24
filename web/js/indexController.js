@@ -10,9 +10,7 @@ Ext.onReady(function() {
            },
            {
                text:"Guardar",
-               listeners:{
-                  click:botonGuardar
-              }
+               handler:botonGuardar
            },
            {
                text:"Borrar",
