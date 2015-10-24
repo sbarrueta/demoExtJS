@@ -1,5 +1,22 @@
 Ext.onReady(function() {
 
+    var toolBar = new Ext.Toolbar({
+       items:[
+           {
+               text:"Abrir"
+           },
+           {
+               text:"Guardar"
+           },
+           {
+               text:"Borrar"
+           }
+           
+       ] 
+    });
+
+
+
     var panelNorte = new Ext.Panel({
       title:"Titulo Norte",
       region:"north",
@@ -15,8 +32,12 @@ Ext.onReady(function() {
     });
     var panelOeste = new Ext.Panel({
       title:"Titulo Oeste",
-      region:"west"
+      region:"west",
+      tbar:toolBar
+      
     });
+    
+    
 
     var panelCentro = new Ext.Panel({
       title:"Titulo Centro",
