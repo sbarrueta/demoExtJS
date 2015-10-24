@@ -59,7 +59,8 @@ Ext.onReady(function() {
                       
                   
               }
-          }
+          },
+          panelGrid
       ]
     });
 
