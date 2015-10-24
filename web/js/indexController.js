@@ -24,7 +24,12 @@ Ext.onReady(function() {
       items:[
           {
               xtype:"button",
-              text:"Picale"
+              text:"Picale",
+              listeners:{
+                  click:function(){
+                      alert("Le diste clic al boton");
+                  }
+              }
           }
       ]
     });
