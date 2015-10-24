@@ -3,13 +3,23 @@ Ext.onReady(function() {
     var toolBar = new Ext.Toolbar({
        items:[
            {
-               text:"Abrir"
+               text:"Abrir",
+               listeners:{
+                  click:botonAbrir
+              }
            },
            {
-               text:"Guardar"
+               text:"Guardar",
+               listeners:{
+                  click:botonGuardar
+              }
            },
            {
-               text:"Borrar"
+               text:"Borrar",
+               listeners:{
+                  click:botonBorrar
+              }
+               
            }
            
        ] 
@@ -47,9 +57,9 @@ Ext.onReady(function() {
               xtype:"button",
               text:"Picale",
               listeners:{
-                  click:function(){
-                      alert("Le diste clic al boton");
-                  }
+                  click:botonClic
+                      
+                  
               }
           }
       ]
