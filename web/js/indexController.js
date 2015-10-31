@@ -1,47 +1,43 @@
-Ext.onReady(function() {
-    
+Ext.onReady(function () {
+
     Ext.QuickTips.init();
-    
     var panelForm = new Ext.form.FormPanel({
-        id:'formulario',
+        id: 'formulario',
         autoHeight: true,
         labelWidth: 200,
         monitorValid: true,
         items: [
             {
                 xtype: 'textfield',
-                msgTarget:'errorNombre',
-                id:"nombre",
-                emptyText:'Tecclee el nombre',
-                blankText:'El nombre es obligado!',
+                msgTarget: 'errorNombre',
+                id: "nombre",
+                emptyText: 'Tecclee el nombre',
+                blankText: 'El nombre es obligado!',
                 fieldLabel: 'First Name',
                 name: 'FirstName',
                 width: 190,
                 allowBlank: false,
                 maxLength: 6,
-                maxLengthText:'Solo son permitidos 6',
-                validator:function(valor){
-                    if (valor==='Ana'){
+                maxLengthText: 'Solo son permitidos 6',
+                validator: function (valor) {
+                    if (valor === 'Ana') {
                         return 'Ana esta excluida!';
-                    }else{
+                    } else {
                         return true;
                     }
                 }
             },
             {
                 xtype: 'textfield',
-                msgTarget:'errorNombre',
-                
+                msgTarget: 'errorNombre',
                 fieldLabel: 'correo',
-                value:'algo@empresa.com',
-                
+                value: 'algo@empresa.com',
                 name: 'correo',
                 width: 190,
                 allowBlank: false,
-                vtype:'email',
-                vtypeText:'Correo invalido!'
+                vtype: 'email',
+                vtypeText: 'Correo invalido!'
             },
-            
             {
                 xtype: 'numberfield',
                 fieldLabel: 'Edad',
@@ -63,7 +59,7 @@ Ext.onReady(function() {
             {
                 xtype: 'combo',
                 fieldLabel: 'Seleccione una opcion',
-                id:'opciones',
+                id: 'opciones',
                 typeAhead: true,
                 triggerAction: 'all',
                 lazyRender: true,
@@ -79,7 +75,7 @@ Ext.onReady(function() {
                 valueField: 'myId',
                 displayField: 'displayText',
                 allowBlank: false
-                
+
             },
             {
                 xtype: 'datefield',
@@ -88,15 +84,13 @@ Ext.onReady(function() {
                 width: 190
             },
             {
-                xtype:'label',
-                id:'errorNombre',
-                cls:'error'
-                
+                xtype: 'label',
+                id: 'errorNombre',
+                cls: 'error'
+
             }
         ]
     });
-
-
     var toolBarInferior = new Ext.Toolbar({
         items: [
             {
@@ -107,8 +101,6 @@ Ext.onReady(function() {
             }
         ]
     });
-
-
     var toolBar = new Ext.Toolbar({
         items: [
             {
@@ -131,15 +123,35 @@ Ext.onReady(function() {
 
         ]
     });
-
     var panelNorte = new Ext.Panel({
         title: "Titulo Norte",
         region: "north",
         html: "<h1>Titulo de la aplicación</h1>"
     });
-    var panelSur = new Ext.Panel({
+    var panelSur = new Ext.form.FormPanel({
         title: "Titulo Sur",
-        region: "south"
+        region: "south",
+        layout: "hbox",
+        layoutConfig: {
+            defaultMargins: {
+                top: 20,
+                right: 20,
+                bottom: 20,
+                left: 20
+            }
+        },
+        height: 200,
+        items: [{
+                xtype: 'numberfield',
+                fieldLabel: 'Edad',
+                name: 'edad',
+                width: 30
+            }, {
+                xtype: 'numberfield',
+                fieldLabel: 'Edad',
+                name: 'muerte',
+                width: 30
+            }]
     });
     var panelEste = new Ext.Panel({
         title: "Titulo Este",
@@ -151,7 +163,6 @@ Ext.onReady(function() {
         tbar: toolBar
 
     });
-
     var panelBoton = new Ext.Panel({
         layout: {
             type: 'hbox',
@@ -171,7 +182,6 @@ Ext.onReady(function() {
         ]
 
     });
-
     var panelCentro = new Ext.Panel({
         title: "Titulo Centro",
         region: "center",
@@ -181,7 +191,6 @@ Ext.onReady(function() {
             panelForm
         ]
     });
-
     new Ext.Viewport({
         layout: 'border',
         items: [
